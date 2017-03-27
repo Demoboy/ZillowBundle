@@ -2,7 +2,7 @@
     "name": "kmj/zillowbundle",
     "type": "symfony-bundle",
     "description": "Symfony2 Bundle that provides classes for Zillow API",
-    "keywords": ["KMJ", "toolkit"],
+    "keywords": ["KMJ", "zillow"],
     "homepage": "http://github.com/Demoboy/ZillowBundle",
     "license": "MIT",
     "authors": [
@@ -15,11 +15,10 @@
         "php": ">=5.4.0",
         "guzzlehttp/guzzle": "~5.1"
     },
-    "autoload": {
-        "psr-0": {
-            "KMJ\\ZillowBundle": ""
-        }
-    },
     "minimum-stability": "stable",
-    "target-dir": "KMJ/ZillowBundle"
+    "autoload": {
+        "psr-4": {
+            "KMJ\\ZillowBundle\\": ""
+        }
+    }
 }

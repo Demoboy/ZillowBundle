@@ -9,7 +9,7 @@
 namespace KMJ\ZillowBundle\Response;
 
 use KMJ\ZillowBundle\Type\Comparables;
-use Symfony\Component\HttpFoundation\Response;
+use SimpleXMLElement;
 
 /**
  * The GetComps API returns a list of comparable recent sales for a specified

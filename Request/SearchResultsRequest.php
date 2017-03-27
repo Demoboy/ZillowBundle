@@ -71,8 +71,6 @@ class SearchResultsRequest extends Request {
             $responses[] = new SearchResultsResponse($result['result']);
         }
 
-        dump($responses);
-        
         return $responses;
     }
 

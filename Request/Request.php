@@ -7,6 +7,7 @@
  */
 
 namespace KMJ\ZillowBundle\Request;
+use KMJ\ZillowBundle\Exception\ZillowApiException;
 
 /**
  * Basic request class.
@@ -66,7 +67,7 @@ abstract class Request {
      * proper response object is created and loaded with the proper values.
      *
      * @return mixed
-     * @throws \KMJ\ZillowBundle\Exception\ZillowApiException
+     * @throws ZillowApiException
      */
     public function getResponse() {
         $cacheXml = null;
@@ -157,11 +158,11 @@ abstract class Request {
      * Check Zillow XML for an error
      *
      * @param \SimpleXMLElement $xml The Zillow response
-     * @throws \KMJ\ZillowBundle\Exception\ZillowApiException
+     * @throws ZillowApiException
      */
     public function checkError($xml) {
         if ($xml->message->code != 0) {
-            throw new \KMJ\ZillowBundle\Exception\ZillowApiException((string) $xml->message->text, (int) $xml->message->code);
+            throw new ZillowApiException((string) $xml->message->text, (int) $xml->message->code);
         }
     }
 
